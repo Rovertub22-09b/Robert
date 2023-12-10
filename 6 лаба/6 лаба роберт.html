@@ -1,0 +1,263 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 10px;
+            zoom: 0.8; 
+            background-image: url('/Users/Desktop/Новая папка 5/1be08a49d6715f4b182ce72d38c9df11-jpeg.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: #f2f2f2;
+        }
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 30px;
+            border: 1px solid #4caf50;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(76, 175, 80, 0.2);
+            background-color: rgba(255, 255, 255, 0.8); 
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #4caf50;
+        }
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            font-size: 14px; 
+            height: 30px; 
+            border: 1px solid #ccc;
+            margin-bottom: 15px; 
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .two-inputs {
+            display: flex;
+            gap: 10px;
+        }
+        button {
+            padding: 12px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px; 
+            border-radius: 5px;
+        }
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        select#education {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            font-size: 14px;
+            height: 30px;
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+            appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+            background-position: right 10px top 50%;
+            background-repeat: no-repeat;
+            background-size: 18px;
+        }
+        select#education::-ms-expand {
+            display: none;
+        }
+        select#education option:checked {
+            background-color: #e6f7ff; 
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: left;
+            max-width: 600px;
+        }
+        .modal button {
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px; 
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+    <title>Формуляр читателя</title>
+</head>
+<body>
+    <form id="myForm" onsubmit="submitForm(event)">
+        <label for="number">№</label>
+        <table>
+            <tr>
+                <td><input type="number" id="number1" name="number1" maxlength="1" placeholder="1" required></td>
+                <td><input type="number" id="number2" name="number2" maxlength="1" placeholder="2" required></td>
+                <td><input type="number" id="number3" name="number3" maxlength="1" placeholder="3" required></td>
+                <td><input type="number" id="number4" name="number4" maxlength="1" placeholder="4" required></td>
+                <td><input type="number" id="number5" name="number5" maxlength="1" placeholder="5" required></td>
+            </tr>
+        </table>
+
+        <label for="year">Год</label>
+        <table>
+            <tr>
+                <td><input type="number" id="year1" name="year1" maxlength="1" placeholder="1" required></td>
+                <td><input type="number" id="year2" name="year2" maxlength="1" placeholder="2" required></td>
+                <td><input type="number" id="year3" name="year3" maxlength="1" placeholder="3" required></td>
+                <td><input type="number" id="year4" name="year4" maxlength="1" placeholder="4" required></td>
+                <td><input type="number" id="year5" name="year5" maxlength="1" placeholder="5" required></td>
+            </tr>
+        </table>
+
+        <input type="text" id="surname" name="surname" placeholder="Фамилия" required>
+        <input type="text" id="name" name="name" placeholder="Имя" required>
+        <input type="text" id="patronymic" name="patronymic" placeholder="Отчество" required>
+        <input type="date" id="birthdate" name="birthdate" placeholder="Дата рождения" required>
+
+        <label for="education">Образование</label>
+        <select id="education" name="education" required>
+            <option value="" disabled selected>Выберите тип образования</option>
+            <option value="школа">Среднее</option>
+            <option value="колледж">Средне-специальное</option>
+            <option value="университет">Высшее</option>
+        </select>
+
+        <input type="text" id="workplace" name="workplace" placeholder="Место работы" required>
+        <input type="text" id="institution" name="institution" placeholder="Учебное заведение" required>
+        <input type="text" id="address" name="address" placeholder="Домашний адрес" required>
+        <input type="tel" id="contact" name="contact" placeholder="Контактный телефон" required>
+
+        <div class="two-inputs">
+            <label for="passportSeries">Серия</label>
+            <input type="text" id="passportSeries" name="passportSeries" placeholder="Серия" maxlength="4" required>
+
+            <label for="passportNumber">Номер</label>
+            <input type="text" id="passportNumber" name="passportNumber" placeholder="Номер" maxlength="6" required>
+        </div>
+
+        <input type="text" id="issuedBy" name="issuedBy" placeholder="Кем выдан" required>
+        <input type="date" id="registrationDate" name="registrationDate" placeholder="Дата выдачи" required>
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="dataProcessing" name="dataProcessing" required>
+            <label for="dataProcessing">Согласен(на) на обработку персональных данных</label>
+
+            <input type="checkbox" id="debtReminders" name="debtReminders" required>
+            <label for="debtReminders">Согласен(на) на получение напоминаний о задолженностях</label>
+
+            <input type="checkbox" id="emailNews" name="emailNews" required>
+            <label for="emailNews">Согласен(на) на получение новостей по электронной почте</label>
+        </div>
+        <button type="submit">Отправить</button>
+    </form>
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <pre id="formData"></pre>
+            <button onclick="closeModal()">Закрыть</button>
+        </div>
+    </div>
+    <script>
+        function submitForm(event) {
+            event.preventDefault(); // Предотвращаем отправку формы по умолчанию
+
+            // Проверка на заполнение обязательных полей
+            const requiredFields = ['number1', 'number2', 'number3', 'number4', 'number5', 'year1', 'year2', 'year3', 'year4', 'year5', 'surname', 'name', 'patronymic', 'birthdate', 'education', 'workplace', 'institution', 'address', 'contact', 'passportSeries', 'passportNumber', 'issuedBy', 'registrationDate', 'dataProcessing', 'debtReminders', 'emailNews'];
+            for (const field of requiredFields) {
+                const value = document.getElementById(field).value;
+                if (!value) {
+                    alert(`Пожалуйста, заполните поле ${field}`);
+                    return;
+                }
+            }
+            // Если все проверки прошли успешно, выводим данные на экран
+            displayFormData();
+            // Очищаем поля формы
+            document.getElementById('myForm').reset();
+        }
+        function displayFormData() {
+            // Получаем значения из полей формы
+            const number = Array.from({ length: 5 }, (_, i) => document.getElementById(`number${i + 1}`).value).join('');
+            const year = Array.from({ length: 5 }, (_, i) => document.getElementById(`year${i + 1}`).value).join('');
+            const surname = document.getElementById('surname').value;
+            const name = document.getElementById('name').value;
+            const patronymic = document.getElementById('patronymic').value;
+            const birthdate = document.getElementById('birthdate').value;
+            const education = document.getElementById('education').value;
+            const workplace = document.getElementById('workplace').value;
+            const institution = document.getElementById('institution').value;
+            const address = document.getElementById('address').value;
+            const contact = document.getElementById('contact').value;
+            const passportSeries = document.getElementById('passportSeries').value;
+            const passportNumber = document.getElementById('passportNumber').value;
+            const issuedBy = document.getElementById('issuedBy').value;
+            const registrationDate = document.getElementById('registrationDate').value;
+            const dataProcessing = document.getElementById('dataProcessing').checked;
+            const debtReminders = document.getElementById('debtReminders').checked;
+            const emailNews = document.getElementById('emailNews').checked;
+            // Формируем текст сообщения
+            const message = `
+                №: ${number}
+                Год: ${year}
+                Фамилия: ${surname}
+                Имя: ${name}
+                Отчество: ${patronymic}
+                Дата рождения: ${birthdate}
+                Образование: ${education}
+                Место работы: ${workplace}
+                Учебное заведение: ${institution}
+                Домашний адрес: ${address}
+                Контактный телефон: ${contact}
+                Серия паспорта: ${passportSeries}
+                Номер паспорта: ${passportNumber}
+                Кем выдан: ${issuedBy}
+                Дата выдачи: ${registrationDate}
+            `;
+            // Отображаем модальное окно с данными
+            const modal = document.getElementById('confirmationModal');
+            const formDataElement = document.getElementById('formData');
+            formDataElement.textContent = message;
+            modal.style.display = 'flex';
+        }
+        function closeModal() {
+            // Закрываем модальное окно
+            const modal = document.getElementById('confirmationModal');
+            modal.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

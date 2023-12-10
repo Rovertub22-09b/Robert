@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Маятник</title>
+    <style>
+        .container {
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+
+        .Маятник {
+            margin-top: 100px;
+            width: 1000px;
+            height: 500px;
+        }
+
+        .ball1 {
+            background: rgb(122, 113, 113);
+            width: 80px;
+            height: 100px;
+            position: relative;
+            border-radius: 50%;
+            animation: left-circle 5s linear infinite;
+            top: -820px;
+            left: 300px;
+        }
+
+        .ball2 {
+            background: rgb(255, 0, 0);
+            width: 80px;
+            height: 100px;
+            position: relative;
+            border-radius: 50%;
+            animation: right-circle 5s linear infinite;
+            top: -920px;
+            left: 700px;
+        }
+
+        .ball3 {
+            background: rgb(255, 0, 0);
+            width: 80px;
+            height: 100px;
+            position: relative;
+            border-radius: 50%;
+            top: -820px;
+            left: 400px;
+        }
+
+        .ball4 {
+            background: rgb(255, 0, 0);
+            width: 80px;
+            height: 100px;
+            position: relative;
+            border-radius: 50%;
+            top: -920px;
+            left: 500px;
+        }
+
+        .ball5 {
+            background: rgb(80, 69, 69);
+            width: 80px;
+            height: 100px;
+            position: relative;
+            border-radius: 50%;
+            top: -1020px;
+            left: 600px;
+        }
+
+        .top {
+            width: 700px;
+            height: 20px;
+            background: rgb(0, 0, 0);
+            margin-top: 100px;
+            margin-left: 200px;
+            position: absolute;
+        }
+
+        .left {
+            width: 15px;
+            height: 500px;
+            background: rgb(0, 0, 0);
+            margin-top: 110px;
+            margin-left: 200px;
+            position: absolute;
+        }
+
+        .right {
+            width: 15px;
+            height: 500px;
+            background: rgb(0, 0, 0);
+            margin-top: 110px;
+            margin-left: 880px;
+            position: absolute;
+        }
+
+        .rope1, .rope2, .rope3, .rope4, .rope5 {
+            height: 180px;
+            width: 4px;
+            background: rgb(50, 46, 46);
+            position: relative;
+        }
+
+        .rope1 {
+            top: 10px;
+            left: 350px;
+            animation: rope1 5s linear infinite;
+        }
+
+        .rope2 {
+            top: -70px;
+            left: 450px;
+        }
+
+        .rope3 {
+            top: -250px;
+            left: 550px;
+        }
+
+        .rope4 {
+            top: -430px;
+            left: 650px;
+        }
+
+        .rope5 {
+            top: -710px;
+            left: 750px;
+            animation: rope2 5s linear infinite;
+        }
+
+        @keyframes left-circle {
+            0% {
+                transform: rotate(90deg) translateX(200px);
+            }
+
+            25% {
+                transform: rotate(180deg) translateX(200px);
+            }
+
+            50% {
+                transform: rotate(90deg) translateX(200px);
+            }
+
+            100% {
+                transform: rotate(90deg) translateX(200px);
+            }
+        }
+
+        @keyframes right-circle {
+            0% {
+                transform: rotate(90deg) translateX(200px);
+            }
+
+            50% {
+                transform: rotate(90deg) translateX(200px);
+            }
+
+            75% {
+                transform: rotate(0deg) translateX(200px);
+            }
+
+            100% {
+                transform: rotate(90deg) translateX(200px);
+            }
+        }
+
+        @keyframes rope1 {
+            0% {
+                transform: rotate(90deg) translateX(100px) translateY(0) rotate(90deg);
+            }
+
+            25% {
+                transform: rotate(135deg) translateX(100px) translateY(70px) rotate(135deg);
+            }
+
+            50% {
+                transform: rotate(90deg) translateX(100px) translateY(0) rotate(90deg);
+            }
+
+            100% {
+                transform: rotate(90deg) translateX(100px) translateY(0) rotate(90deg);
+            }
+        }
+
+        @keyframes rope2 {
+            0% {
+                transform: rotate(450deg) translateX(100px) translateY(0) rotate(450deg);
+            }
+
+            50% {
+                transform: rotate(450deg) translateX(100px) translateY(0) rotate(450deg);
+            }
+
+            75% {
+                transform: rotate(405deg) translateX(100px) translateY(-70px) rotate(405deg);
+            }
+
+            100% {
+                transform: rotate(450deg) translateX(100px) translateY(0) rotate(450deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="Маятник">
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top"></div>
+            <div class="rope1"></div>
+            <div class="rope2"></div>
+            <div class="rope3"></div>
+            <div class="rope4"></div>
+            <div class="rope5"></div>
+            <div class="ball1"></div>
+            <div class="ball2"></div>
+            <div class="ball3"></div>
+            <div class="ball4"></div>
+            <div class="ball5"></div>
+        </div>
+    </div>
+</body>
+
+</html>

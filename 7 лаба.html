@@ -1,0 +1,216 @@
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Калькулятор</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Roboto', sans-serif; /* Используйте более современный шрифт */
+      background-color: #831919; /* Добавьте светлый цвет фона */
+    }
+    #calculator-wrapper {
+      text-align: center;
+      border: 2px solid rgb(47, 47, 24);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: #949fdf; /* Добавьте белый цвет фона */
+      width: 350px; /* Увеличьте ширину обертки */
+    }
+    input {
+      width: calc(100% - 22px);
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 21px;
+      border: 1px solid #8d9d8d;
+      border-radius: 5px;
+      text-align: right;
+      box-sizing: border-box;
+    }
+    button {
+      width: 60px;
+      height: 60px;
+      font-size: 18px;
+      margin: 5px;
+      padding: 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    button.operator {
+      background-color: #f0ad4e;
+      color: #fff;
+    }
+    button.operator:hover {
+      background-color: #ec971f;
+    }
+    button.function {
+      background-color: #5bc0de;
+      color: #fff;
+    }
+    button.function:hover {
+      background-color: #46b8da;
+    }
+    button.number {
+      background-color: #d7e4ea;
+      color: #333;
+    }
+    button.number:hover {
+      background-color: #afd9ee;
+    }
+  </style>
+</head>
+<body>
+  <div id="calculator-wrapper">
+    <input id="display" type="text" readonly>
+    <br>
+
+    <button class="function" onclick="clearEntry()">C/CE</button>
+    <button class="function" onclick="turnOff()">Off</button>
+    <button class="function" onclick="calculateSquareRoot()"><i class="fas fa-square-root-alt"></i></button>
+    <button class="function" onclick="calculatePercentage()">%</button>
+    <br>
+
+    <button class="function" onclick="clearMemory()">MC</button>
+    <button class="function" onclick="changeSign()">+/-</button>
+    <button class="function" onclick="returnMemorySign()">+M</button>
+    <button class="operator" onclick="appendCharacter('÷')">&#247;</button> <!-- Замените "/" на символ деления -->
+    <br>
+
+    <button class="number" onclick="appendCharacter('7')">7</button>
+    <button class="number" onclick="appendCharacter('8')">8</button>
+    <button class="number" onclick="appendCharacter('9')">9</button>
+    <button class="operator" onclick="appendCharacter('*')">&#215;</button>
+    <br>
+
+    <button class="number" onclick="appendCharacter('4')">4</button>
+    <button class="number" onclick="appendCharacter('5')">5</button>
+    <button class="number" onclick="appendCharacter('6')">6</button>
+    <button class="operator" onclick="appendCharacter('-')">-</button>
+    <br>
+
+    <button class="number" onclick="appendCharacter('1')">1</button>
+    <button class="number" onclick="appendCharacter('2')">2</button>
+    <button class="number" onclick="appendCharacter('3')">3</button>
+    <button class="operator" onclick="appendCharacter('+')">+</button>
+    <br>
+
+    <button class="number" onclick="changeSign()">0</button>
+    <button class="function" onclick="appendCharacter('.')">.</button>
+    <button class="function" onclick="calculate()">=</button>
+    <br>
+
+    <button class="function" onclick="calculateInverse()">1/x</button>
+    <button class="function" onclick="deleteLastCharacter()">&#9003;</button>
+    <!-- Unicode character for delete: &#9003; -->
+  </div>
+  <script>
+    let display = document.getElementById('display');
+    let currentInput = '';
+    let memory = 0;
+    function appendCharacter(char) {
+      // Handle two consecutive dots
+      if (char === '.' && currentInput.endsWith('.')) {
+        return;
+      }
+      currentInput += char;
+      updateDisplay();
+    }
+    function clearEntry() {
+      if (currentInput === '') {
+        clearAll();
+      } else {
+        currentInput = '';
+        updateDisplay();
+      }
+    }
+    function clearAll() {
+      currentInput = '';
+      memory = 0;
+      updateDisplay();
+    }
+    function turnOff() {
+      clearAll();
+    }
+    function calculateSquareRoot() {
+      if (currentInput !== '' && currentInput !== '0') {
+        currentInput = Math.sqrt(parseFloat(currentInput)).toString();
+        updateDisplay();
+      }
+    }
+    function calculatePercentage() {
+      if (currentInput !== '' && currentInput !== '0') {
+        currentInput = (parseFloat(currentInput) / 100).toString();
+        updateDisplay();
+      }
+    }
+    function clearMemory() {
+      memory = 0;
+    }
+    function addToMemory() {
+      if (currentInput !== '' && currentInput !== '0') {
+        memory += parseFloat(currentInput);
+        clearEntry();
+      }
+    }
+    function subtractFromMemory() {
+      if (currentInput !== '' && currentInput !== '0') {
+        memory -= parseFloat(currentInput);
+        clearEntry();
+      }
+    }
+    function recallMemory() {
+      currentInput = memory.toString();
+      updateDisplay();
+    }
+    function clearMemoryEntry() {
+      memory = 0;
+    }
+    function calculate() {
+      if (currentInput !== '') {
+        try {
+          currentInput = eval(currentInput).toString();
+          updateDisplay();
+        } catch (error) {
+          currentInput = 'Error';
+          updateDisplay();
+        }
+      }
+    }
+    function changeSign() {
+      if (currentInput !== '' && currentInput !== '0') {
+        currentInput = (parseFloat(currentInput) * -1).toString();
+        updateDisplay();
+      }
+    }
+    function returnMemorySign() {
+      if (memory !== 0) {
+        currentInput = (memory * -1).toString();
+        updateDisplay();
+      }
+    }
+
+    function calculateInverse() {
+      if (currentInput !== '' && currentInput !== '0') {
+        currentInput = (1 / parseFloat(currentInput)).toString();
+        updateDisplay();
+      }
+    }
+    function deleteLastCharacter() {
+      currentInput = currentInput.slice(0, -1);
+      updateDisplay();
+    }
+    function updateDisplay() {
+      display.value = currentInput;
+    }
+  </script>
+</body>
+</html>
+

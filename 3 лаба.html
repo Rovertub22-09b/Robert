@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 10px;
+            zoom: 0.8; /* Adjust the zoom level as needed */
+            background-color: #f2f2f2;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #4caf50;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(76, 175, 80, 0.2);
+            background-color: #fff;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #4caf50;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            font-size: 14px; /* Adjust the font size as needed */
+            height: 30px; /* Adjust the height as needed */
+            border: 1px solid #ccc;
+            margin-bottom: 15px; /* Added margin between form elements */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .two-inputs {
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            padding: 12px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px; /* Adjust the font size as needed */
+            border-radius: 5px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        @media (min-width: 400px) {
+            /* Desktop styles */
+            form {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            label {
+                text-align: right;
+                padding-right: 10px;
+                margin-bottom: 0;
+            }
+
+            input {
+                margin-bottom: 0;
+            }
+        }
+    </style>
+    <title>Формуляр читателя</title>
+</head>
+
+<body>
+
+    <form>
+        <label for="number">№</label>
+        <table>
+            <tr>
+                <td><input type="number" id="number1" name="number1" maxlength="1" placeholder="1" required></td>
+                <td><input type="number" id="number2" name="number2" maxlength="1" placeholder="2" required></td>
+                <td><input type="number" id="number3" name="number3" maxlength="1" placeholder="3" required></td>
+                <td><input type="number" id="number4" name="number4" maxlength="1" placeholder="4" required></td>
+                <td><input type="number" id="number5" name="number5" maxlength="1" placeholder="5" required></td>
+            </tr>
+        </table>
+
+        <label for="year">Год</label>
+        <table>
+            <tr>
+                <td><input type="number" id="year1" name="year1" maxlength="1" placeholder="1" required></td>
+                <td><input type="number" id="year2" name="year2" maxlength="1" placeholder="2" required></td>
+                <td><input type="number" id="year3" name="year3" maxlength="1" placeholder="3" required></td>
+                <td><input type="number" id="year4" name="year4" maxlength="1" placeholder="4" required></td>
+                <td><input type="number" id="year5" name="year5" maxlength="1" placeholder="5" required></td>
+            </tr>
+        </table>
+
+        <input type="text" id="surname" name="surname" placeholder="Фамилия" required>
+        <input type="text" id="name" name="name" placeholder="Имя" required>
+        <input type="text" id="patronymic" name="patronymic" placeholder="Отчество" required>
+        <input type="date" id="birthdate" name="birthdate" placeholder="Дата рождения" required>
+
+        <label for="education">Образование</label>
+        <select id="education" name="education" required>
+            <option value="" disabled selected>Выберите тип образования</option>
+            <option value="school">Среднее</option>
+            <option value="college">Средне-специальное</option>
+            <option value="university">Высшее</option>
+        </select>
+
+        <input type="text" id="workplace" name="workplace" placeholder="Место работы" required>
+        <input type="text" id="institution" name="institution" placeholder="Учебное заведение" required>
+        <input type="text" id="address" name="address" placeholder="Домашний адрес" required>
+        <input type="tel" id="contact" name="contact" placeholder="Контактный телефон" required>
+
+        <div class="two-inputs">
+            <label for="passportSeries">Серия</label>
+            <input type="text" id="passportSeries" name="passportSeries" placeholder="Серия" maxlength="4" required>
+
+            <label for="passportNumber">Номер</label>
+            <input type="text" id="passportNumber" name="passportNumber" placeholder="Номер" maxlength="6" required>
+        </div>
+
+        <input type="text" id="issuedBy" name="issuedBy" placeholder="Кем и когда выдан" required>
+        <input type="date" id="registrationDate" name="registrationDate" placeholder="Дата записи" required>
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="dataProcessing" name="dataProcessing" required>
+            <label for="dataProcessing">Согласен(на) на обработку персональных данных</label>
+
+            <input type="checkbox" id="debtReminders" name="debtReminders" required>
+            <label for="debtReminders">Согласен(на) на получение напоминаний о задолженностях</label>
+
+            <input type="checkbox" id="emailNews" name="emailNews" required>
+            <label for="emailNews">Согласен(на) на получение новостей по электронной почте</label>
+        </div>
+
+        <button type="submit">Отправить</button>
+    </form>
+
+</body>
+
+</html>
+
+
