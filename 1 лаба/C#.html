@@ -1,0 +1,265 @@
+<html>
+<head>
+
+<title>
+C#
+</title>
+<style>
+body {
+    background: #b700ff69;
+    overflow: auto;
+    word-break: normal;
+    }
+
+p {
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 14px;
+    }
+    
+h1 {    
+    font-size: 24px;
+    padding-left: 40px;
+    padding-right: 40px;
+    word-spacing: 10px;
+    color: #090082;
+    text-shadow: -50px 50px 0px #1100ff60,
+    50px 50px 0px #1100ff66,
+        -100px 100px 0px #1100ff60,
+        100px 100px 0px #1100ff66,
+        -150px 150px 0px #1100ff90,
+        150px 150px 0px #1100ff93,
+        -200px 200px 0px #1100ffa0,
+        200px 200px 0px #1100ffa8,
+        -250px 250px 0px #1100ff60,
+   		250px 250px 0px #1100ff66;
+		font-size: 200px;
+    }
+	a {
+    flex: 1; 
+    outline: none;
+    text-align: left;
+    cursor: alias;
+    color: #ff008c
+}
+
+
+a:active {
+    background: rgb(75, 0, 46);
+    color: white;
+  }
+@font-face {
+	font-family: "Pixeloid Sans";
+	src: url(ofont.ru_Pixeloid\ Sans.ttf);
+}
+h2 {
+    color: rgb(255, 233, 252);
+    font-size: 18px;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-family: "Pixeloid Sans";
+    position: static;
+    }
+
+h3 {
+    color:rgb(255, 255, 255);
+    font-size: 18px;
+    padding-left: 40px;
+    padding-right: 40px;
+    outline-style:ridge;
+        outline-color: rgb(255, 0, 0);
+        padding-left: 60px;
+    }
+
+	ul {
+    padding-left: 60px;
+}
+
+div {
+    resize: both;
+    overflow: auto;
+}
+
+</style>
+<link rel="stylesheet" href="normalize.css">
+<link rel="stylesheet" href="code.css">
+
+</head>
+
+<body>
+	<hr>
+<h1 class="title-header vvv font">C# - язык программирования</h1>
+
+<p class="foto "><img src="441a75638eb5763f5be154e47660392e.jpg" alt="картинка"
+	width="30%" height="30%" class="img"></p>
+
+<div class="container ">
+
+<a href="#1">История создания</a><br>
+
+<a href="#2">Краткий обзор языка</a><br>
+
+<a href="#3">Примеры кода</a><br>
+
+</div>
+
+
+<a name="1"></a>
+<h2>История создания</h2>
+
+<p>Далекие предки C# появились еще в 60-х годах. Все началось с появления языка B, который в 1969 году был создан коллективом разработчиков из Технологического института Массачусетса (MIT). Главным автором B является Кен Томпсон. Тогда команда работала над операционной системой UNIX. Уже существовавший язык PL/I, применявшийся в то время для мэйнфреймов производства компании IBM, был достаточно громоздким и меньше подходил для поставленной задачи. Поэтому ученые решили создать новый язык, который и получил название B. Он является типичным представителем ранних императивных языков программирования.
+
+	После B, как это ни странно, последовал С, который был изобретен в 1972 году. Основой для нового языка послужил сам B.
+	
+	Создателями C были Кен Томпсон и Денис Ритчи, которые работали в исследовательской лаборатории компании AT&T (AT&T Bell Telephone Laboratories). В 1971 году Ритчи начал создавать расширенную версию B. Сначала он назвал её NB (New B), но когда язык стал сильно отличаться от B, название сменили на C. B расширился за счет явного использования типов, структур и ряда новых операций.
+	
+	По поводу возникновения языка Си Питер Мойлан в своей книге «The case against C» писал: <i>«Нужен был язык, способный обойти некоторые жесткие правила, встроенные в большинство языков высокого уровня и обеспечивающие их надежность. Нужен был такой язык, который позволил бы делать то, что до него можно было реализовать только на ассемблере или на уровне машинного кода»</i>.
+<p>
+	<p class="textline">Система типов в C#.
+		<ol>
+		<li>Типы значений</li>
+		<li>Ссылочные типы</li>
+		<li><a href="https://learn.microsoft.com/ru-ru/dotnet/csharp/tour-of-csharp/types">Подробнее о типах</a></li>
+		</ol>
+	</p>
+
+
+<a name="2"></a>
+<h2>Краткий обзор языка</h2>
+<p><img src="207247_normal.webp" alt="картинка"
+	width="30%" height="30%" class="right img"></p>
+<p>C# - это объектно-ориентированный язык программирования, который разработала компания Microsoft. Он был выпущен в 2000 году и основан на языке C++. C# используется для создания Windows-приложений, веб-приложений, игр, мобильных приложений и многого другого.
+
+<br><b>	Язык C# имеет множество возможностей, таких как:</b>
+
+	<Ul type="square">
+		<u> <Li><i>Сильная типизация:</i> переменные должны быть объявлены и типизированы до использования.</Li>
+			<li><i>Сильная типизация:</i> переменные должны быть объявлены и типизированы до использования.</li>
+			<li><i>Сборка мусора:</i> автоматически управляет памятью, освобождая неиспользуемые объекты.</li>
+			<li><i>Наследование:</i> позволяет создавать новый класс на основе существующего.</li>
+			<li><i>Интерфейсы: </i>определяют контракты для классов и структур.</li>
+			<li><i>Делегаты:</i> позволяют передавать методы как параметры другим методам.</li>
+			<li><i>Асинхронное</i> программирование: позволяет выполнять задачи параллельно.</li>
+		</u>		
+	</Ul>
+
+	<p>C# также имеет широкую поддержку в интегрированной среде разработки Visual Studio, которая предоставляет различные инструменты для разработки и отладки приложений на этом языке.
+	В целом, C# - это мощный язык программирования с широкими возможностями и хорошей поддержкой от Microsoft. Он является одним из наиболее популярных языков программирования в мире.</p>
+	</p> 
+</p>
+
+<p><a href="Table.html">Операторы, допускающие логическое значение NULL</a> <br>Для операндов bool? операторы & (логическое И) и | (логическое ИЛИ) поддерживают следующую логику с тремя значениями:
+	<p><uL type="circle">
+		<li>
+	Оператор & возвращает true только в том случае, если оба операнда имеют значение true. Если x или y имеет значение false, оператор x & y возвращает false (даже если другой операнд имеет значение null). В противном случае выражение x & y будет иметь значение null.
+		</li>
+		<li>
+	Оператор | возвращает false только в том случае, если оба операнда имеют значение false. Если x или y имеет значение true, оператор x | y возвращает true (даже если другой операнд имеет значение null). В противном случае выражение x | y будет иметь значение null.</p>
+</li></ul>
+</p>
+</p>
+
+
+<a name="3"></a>
+<h2>Примеры кода</h2>
+
+<p><img src="image6.png" alt="картинка"
+width="20%" height="20%" class="left img"></p>
+
+
+<p>
+	<br><span class="colortext">using</span> System;
+	<br>
+	<br><span class="colortext">class</span><span class="colortext2"> Hello</span>
+	<br>{
+		<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="colortext">static void</span>
+		<span class="colortext2">Main</span>()
+    <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="colortext3">"Hello, World"</span>);
+	<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+	<br>}
+</p>
+
+
+
+
+
+
+	
+<h3>Список использованных тегов и CSS-свойств</h3>
+<p class="wight"><ul class="BBB">
+	<li>	a	</li>
+	<li>	b 	</li>
+	<li>	background 	</li>
+	<li>	body 	</li>
+	<li>	border 	</li>
+	<li>	border-collapse 	</li>
+	<li>	border-color 	</li>
+	<li>	border-radius 	</li>
+	<li>	br 	</li>
+	<li>	caption	</li>
+	<li>	color 	</li>
+	<li>	cursor	</li>
+	<li>	display 	</li>
+	<li>	div 	</li>
+	<li>	em	</li>
+	<li>	flex	</li>
+	<li>	float 	</li>
+	<li>	font-family 	</li>
+	<li>	font-size 	</li>
+	<li>	font-weight 	</li>
+	<li>	gap.	</li>
+	<li>	h1-h6	</li>
+	<li>	head	</li>
+	<li>	hr	</li>
+	<li>	html	</li>
+	<li>	i	</li>
+	<li>	img	</li>
+	<li>	ins	</li>
+	<li>	left 	</li>
+	<li>	li	</li>
+	<li>	line-height 	</li>
+	<li>	list-style-image 	</li>
+	<li>	margin 	</li>
+	<li>	mark 	</li>
+	<li>	ol 	</li>
+	<li>	opacity	</li>
+	<li>	outline	</li>
+	<li>	outline-color	</li>
+	<li>	outline-style 	</li>
+	<li>	overflow 	</li>
+	<li>	p 	</li>
+	<li>	padding 	</li>
+	<li>	padding-bottom 	</li>
+	<li>	padding-left 	</li>
+	<li>	padding-right 	</li>
+	<li>	position 	</li>
+	<li>	resize 	</li>
+	<li>	right 	</li>
+	<li>	span 	</li>
+	<li>	sub 	</li>
+	<li>	sup 	</li>
+	<li>	table	</li>
+	<li>	table-layout 	</li>
+	<li>	tbody 	</li>
+	<li>	td	</li>
+	<li>	text-align 	</li>
+	<li>	text-decoration 	</li>
+	<li>	text-decoration-line 	</li>
+	<li>	text-emphasis-color 	</li>
+	<li>	text-emphasis-style 	</li>
+	<li>	text-shadow 	</li>
+	<li>	th 	</li>
+	<li>	thead	</li>
+	<li>	title 	</li>
+	<li>	tr	</li>
+	<li>	u	</li>
+	<li>	ul 	</li>
+	<li>	width 	</li>
+	<li>	word-break	</li>
+	<li>	word-spacing	</li>
+</ul>
+
+	<hr>
+</body>
+</html>

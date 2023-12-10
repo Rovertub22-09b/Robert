@@ -1,0 +1,118 @@
+﻿.container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+}
+
+
+.wight
+    {text-decoration-color: aliceblue;}
+    .foto {
+        text-align: center; 
+       }    
+
+     
+
+.img {
+    border-radius: 5em 5em 5em 5em/ 30em 30em 30em 30em;
+    border-style: dashed;
+    padding: 10px;
+    border-color: #0022ff #0099ff;
+}
+   
+
+
+
+
+.BBB{
+        list-style-image: url(48.png);
+    }
+
+    
+.colortext {
+    color: blue; 
+    }
+.colortext2 {
+    color: rgb(0, 115, 128); 
+    }
+.colortext3 {
+    color: rgb(151, 38, 0); 
+    }
+
+.text-with-shadow {
+  text-shadow:
+    1px 1px 2px black,
+    0 0 1em rgb(140, 0, 255),
+    0 0 0.2em rgb(140, 0, 255);
+  color: rgb(62, 0, 125);
+}
+
+.textline {
+    text-decoration: 
+    underline #ea00ff;
+}
+    
+.vvv {
+    text-emphasis-color: rgb(255, 0, 0);
+    text-emphasis-style: "!";
+  }
+    
+.right {
+    float: right; 
+    margin: 5px 5px 0 0;
+    }
+    
+.center {
+    float: center;
+    margin: 0 0 0 0; 
+    }
+    
+.left {
+    float: left;
+    margin: 0 20px 0 0; 
+    }
+
+table {
+    font-size: 14px;
+    table-layout: fixed;
+    }
+
+table.t {
+    width: 70%;
+    border-collapse: collapse;  
+    font-size: 14px;
+    font-family: 'Times New Roman';
+    text-align: center;
+   }
+
+.t caption {
+    padding-bottom: 0.5em;
+    font-weight: bold;
+    font-size: 14px;
+    }
+
+.t th, .t td {
+    padding: 4px 8px;
+    border: 2px solid #1900ff;
+    background: #00a6ff;
+}
+
+.t thead th {
+    background: #0004ff88;
+    color: #0f0053;
+    font-size: 14px;
+    font-weight: bold;
+ padding: 2px 8px;
+    text-align: center;
+}
+
+.t tbody tr:nth-child(odd) *:nth-child(even), .t tbody tr:nth-child(even) *:nth-child(odd) {
+    background: #00ccff;
+    }
+      
+.t tr *:nth-child(3), .t tr *:nth-child(4) {
+    text-align: center;
+    }
